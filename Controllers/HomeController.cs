@@ -16,7 +16,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         Grupo grupo = new Grupo();
-        ViewBag.Grupo = grupo.DevolverIntegrantes();
+        ViewBag.Grupo = grupo.DevolverCabañas();
         return View();
     }
 
@@ -31,10 +31,15 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public IActionResult SelectIntegrante(int dni){
-        Grupo grupo = new Grupo();
-        Integrante integrante = grupo.GetIntegrante(dni);
-        ViewBag.Integrante = integrante;
+    public IActionResult MostrarCabañas(){
+        Complejo Complejo = new Complejo();
+        List<string> cabañas = new List();
+        foreach (string c in cabañas.GetNombre())
+        {
+            cabañas.Add(c)
+        }
+        Cabaña cabaña = grupo.GetCabaña(id);
+        ViewBag.cabaña = cabaña;
         return View("InfoIntegrante");
     }
 }
