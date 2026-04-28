@@ -34,12 +34,11 @@ public class HomeController : Controller
     public IActionResult MostrarCabañas(){
         Complejo Complejo = new Complejo();
         List<string> cabañas = new List();
-        foreach (string c in cabañas.GetNombre())
+        foreach (Cabaña c in cabañas)
         {
-            cabañas.Add(c)
+            cabañas.Add(c.GetNombre())
         }
-        Cabaña cabaña = grupo.GetCabaña(id);
-        ViewBag.cabaña = cabaña;
-        return View("InfoIntegrante");
+        ViewBag.cabañas = cabañas;
+        return View("MostrarCabañas");
     }
 }
