@@ -15,8 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Grupo grupo = new Grupo();
-        ViewBag.Grupo = grupo.DevolverCabañas();
+        Complejo complejo = new Complejo();
+        ViewBag.Complejo = complejo;
         return View();
     }
 
@@ -31,14 +31,10 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public IActionResult MostrarCabañas(){
-        Complejo Complejo = new Complejo();
-        List<string> cabañas = new List();
-        foreach (Cabaña c in cabañas)
-        {
-            cabañas.Add(c.GetNombre())
-        }
-        ViewBag.cabañas = cabañas;
-        return View("MostrarCabañas");
+    public IActionResult MostrarCabaña(int id)
+    {
+       Complejo complejo = new Complejo(); 
+       ViewBag.Cabaña = complejo.GetCabaña(id);
+       return View();
     }
 }

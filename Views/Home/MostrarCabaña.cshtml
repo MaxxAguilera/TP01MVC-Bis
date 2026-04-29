@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>@ViewBag.Cabaña.GetNombre()</h1>
+<p>Descripcion: @ViewBag.Cabaña.GetDescripcion()</p>
+<p>Capacidad: @ViewBag.Cabaña.GetCapacidad()</p>
+<img src= "@ViewBag.Cabaña.GetFoto()" alt="Foto cabaña"/>
+<p>Ambientes:</p>
+@foreach(string ambiente in ViewBag.Cabaña.GetAmbientes())
+{
+    <p>@ambiente</p>
+}

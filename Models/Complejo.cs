@@ -9,19 +9,19 @@ public class Complejo
         this.cabañas = CargaDatosManual();
     }
 
-    public Dictionary<int, Cabaña> CargaDatosManual()
+    private Dictionary<int, Cabaña> CargaDatosManual()
     {
         Dictionary<int, Cabaña> cabañas = new Dictionary<int, Cabaña>();
-        List<string> fotos1 = new List<string>(){"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6eohP8mqpbCD8liOr9GKOdFLACbEOj5CK6A&s", "https://www.arkitectureonweb.com/o/adaptive-media/image/11036242/preview-1000px-lite/Cedar+Cabin-4.jpg?t=1620730248418"};
+        string foto1 = "/imagenes/FotoCabaña1.avif";
         List<string> ambientes1 = new List<string>(){"Sala de ensayo amplia", "Cuarto de pool", "Cocina de marmol"};
-        Cabaña Cabaña1 = new Cabaña(502, "Cabaña macho", "Cabaña para salir con amigos", 8, fotos1, ambientes1);
-        cabañas.Add(Cabaña1.GetId(), Cabaña1);
+        Cabaña cabaña1 = new Cabaña(6767, "Cabaña macho", "Cabaña para salir con amigos", 8, foto1, ambientes1);
+        cabañas.Add(cabaña1.GetId(), cabaña1);
 
-        Dictionary<int, Cabaña> cabañas = new Dictionary<int, Cabaña>();
-        List<string> fotos2 = new List<string>(){"https://www.ecosdeargentina.com/casas-cabanas-en-cuyo-con-aire-acondicionado", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiR5ejzmnnRR9c1Lhw-4QOtW1lk043nJkLag&s"};
+        string foto2 = "/imagenes/FotoCabaña2.avif";
         List<string> ambientes2 = new List<string>(){"baño completo", "patio con pileta", "Cuarto con cama matrimonial"};
-        Cabaña Cabaña2 = new Cabaña(502, "Cabaña fausta", "Cabaña para salir con gedes", 22, fotos2, ambientes2);
-        cabañas.Add(Cabaña2.GetId(), Cabaña2);
+        Cabaña cabaña2 = new Cabaña(369, "Cabaña fausta", "Cabaña para salir con gedes", 22, foto2, ambientes2);
+        cabañas.Add(cabaña2.GetId(), cabaña2);
+        return cabañas;
     } 
 
     public Dictionary<int, Cabaña> DevolverCabañas()

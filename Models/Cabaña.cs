@@ -1,21 +1,21 @@
 namespace TP01MVC_FINAL.Models;
 
-public class Cabaña;
+public class Cabaña
 {
     private int id;
     private string nombre; 
-    private string descripción;
+    private string descripcion;
     private int capacidad;
-    private List<string> fotos;
+    private string foto;
     private List<string> ambientes;
 
-    public Cabaña (int id, string nombre, string descripcion, int capacidad, List<string> fotos, List<string> ambientes)
+    public Cabaña (int id, string nombre, string descripcion, int capacidad, string foto, List<string> ambientes)
     {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.capacidad = capacidad;
-        this.fotos = fotos;
+        this.foto = foto;
         this.ambientes = ambientes;
     }
 
@@ -39,13 +39,17 @@ public class Cabaña;
         return this.descripcion;
     }
 
-    public List<string> Getfotos()
+    public string GetFoto()
     {
-        return this.fotos;
+        return this.foto;
     }
 
-    public List<string> Getambientes()
+    public List<string> GetAmbientes()
     {
         return this.ambientes;
+    }
+
+    public int GetCapacidad(){
+        return this.capacidad;
     }
 }

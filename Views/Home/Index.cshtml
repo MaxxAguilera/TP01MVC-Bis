@@ -3,12 +3,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>Los rastafa</h1>
-<img src="LogoGrupo.png" alt="Logo grupo"/>
-@foreach(KeyValuePair<int, Integrante> kvp in (Dictionary<int, Integrante>)ViewBag.Grupo)
+<h1>Complejo Fausto</h1>
+<img src="/imagenes/ComplejoFoto.jpg" alt="Foto complejo"/>
+@foreach(KeyValuePair<int, Cabaña> kvp in ViewBag.Complejo.DevolverCabañas())
 {
-    Integrante i = kvp.Value;
-    <img src= "@i.GetFoto()" alt="@i.GetNombre()"/>
-    var dni = i.GetDni();
-    @Html.ActionLink(linkText: $"{i.GetNombre()}", actionName: "SelectIntegrante", controllerName: "Home", routeValues: new {dni = dni})
+    Cabaña cabaña = kvp.Value;
+    <p>@cabaña.GetNombre()</p>
+    <img src= "@cabaña.GetFoto()" alt="Foto cabaña"/>
+    <p>Capacidad: @cabaña.GetCapacidad()</p>
+    int id = cabaña.GetId();
+    @Html.ActionLink(linkText: $"{cabaña.GetNombre()}", actionName: "SelectIntegrante", controllerName: "Home", routeValues: new {id = id})
 }
