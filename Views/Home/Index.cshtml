@@ -12,5 +12,5 @@
     <img src= "@cabaña.GetFoto()" alt="Foto cabaña"/>
     <p>Capacidad: @cabaña.GetCapacidad()</p>
     int id = cabaña.GetId();
-    @Html.ActionLink(linkText: $"{cabaña.GetNombre()}", actionName: "SelectIntegrante", controllerName: "Home", routeValues: new {id = id})
+    @Html.ActionLink(linkText: $"{cabaña.GetNombre()}", actionName: "MostrarCabaña", controllerName: "Home", routeValues: new {id = id})
 }
